@@ -9,4 +9,4 @@ addons:
         - linux-libc-dev
         - glibc-source
         - libc6
-
+        - libc6-dev
