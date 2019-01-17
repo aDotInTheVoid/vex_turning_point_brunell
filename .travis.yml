@@ -6,3 +6,4 @@ addons:
   apt:
     packages:
         - gcc-arm-none-eabi
+        - linux-libc-dev
