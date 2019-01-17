@@ -10,3 +10,5 @@ addons:
         - glibc-source
         - libc6
         - libc6-dev
+        - gcc
+        - build-essential
