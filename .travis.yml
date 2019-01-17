@@ -7,3 +7,5 @@ addons:
     packages:
         - gcc-arm-none-eabi
         - linux-libc-dev
+        - glibc-source
+
