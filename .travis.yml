@@ -1,4 +1,6 @@
 language: c
+sudo: false
+dist: xenial
 script: make
 addons:
   apt:
