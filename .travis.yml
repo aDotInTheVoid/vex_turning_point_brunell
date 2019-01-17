@@ -8,4 +8,5 @@ addons:
         - gcc-arm-none-eabi
         - linux-libc-dev
         - glibc-source
+        - libc6
 
