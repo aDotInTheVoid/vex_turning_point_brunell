@@ -31,22 +31,23 @@ extern "C" {
  **********************/
 /*Data of image*/
 typedef struct {
-  /*No inherited ext. because inherited from the base object*/ /*Ext. of
-                                                                  ancestor*/
-  /*New data for this type */
-  const void *src; /*Image source: Pointer to an array or a file or a symbol*/
+    /*No inherited ext. because inherited from the base object*/ /*Ext. of
+                                                                    ancestor*/
+    /*New data for this type */
+    const void *src; /*Image source: Pointer to an array or a file or a symbol*/
 
-  lv_coord_t
-      w; /*Width of the image (doubled when upscaled) (Handled by the library)*/
-  lv_coord_t h; /*Height of the image (doubled when upscaled) (Handled by the
-                   library)*/
-  uint8_t src_type : 2; /*See: lv_img_src_t*/
-  uint8_t
-      auto_size : 1; /*1: automatically set the object size to the image size*/
-  uint8_t
-      chroma_keyed : 1;   /*1: Chroma keyed image, LV_COLOR_TRANSP (lv_conf.h)
-                             pixels will be transparent (Handled by the library)*/
-  uint8_t alpha_byte : 1; /*1: Extra byte for every pixel to define opacity*/
+    lv_coord_t w; /*Width of the image (doubled when upscaled) (Handled by the
+                     library)*/
+    lv_coord_t h; /*Height of the image (doubled when upscaled) (Handled by the
+                     library)*/
+    uint8_t src_type : 2;  /*See: lv_img_src_t*/
+    uint8_t auto_size : 1; /*1: automatically set the object size to the image
+                              size*/
+    uint8_t
+        chroma_keyed : 1;   /*1: Chroma keyed image, LV_COLOR_TRANSP (lv_conf.h)
+                               pixels will be transparent (Handled by the
+                               library)*/
+    uint8_t alpha_byte : 1; /*1: Extra byte for every pixel to define opacity*/
 } lv_img_ext_t;
 
 /**********************
@@ -96,7 +97,7 @@ void lv_img_set_auto_size(lv_obj_t *img, bool autosize_en);
  * @param style pointer to a style
  */
 static inline void lv_img_set_style(lv_obj_t *img, lv_style_t *style) {
-  lv_obj_set_style(img, style);
+    lv_obj_set_style(img, style);
 }
 
 /**
@@ -142,7 +143,7 @@ bool lv_img_get_auto_size(lv_obj_t *img);
  * @return pointer to the image's style
  */
 static inline lv_style_t *lv_img_get_style(lv_obj_t *img) {
-  return lv_obj_get_style(img);
+    return lv_obj_get_style(img);
 }
 
 /**
@@ -151,7 +152,9 @@ static inline lv_style_t *lv_img_get_style(lv_obj_t *img) {
  * @param img
  * @return false
  */
-static inline bool lv_img_get_upscale(lv_obj_t *img) { return false; }
+static inline bool lv_img_get_upscale(lv_obj_t *img) {
+    return false;
+}
 
 /**********************
  *      MACROS

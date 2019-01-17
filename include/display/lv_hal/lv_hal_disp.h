@@ -17,6 +17,7 @@ extern "C" {
  *********************/
 #include "display/lv_misc/lv_color.h"
 #include "lv_hal.h"
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -32,33 +33,33 @@ extern "C" {
  * Display Driver structure to be registered by HAL
  */
 typedef struct _disp_drv_t {
-  /*Write the internal buffer (VDB) to the display. 'lv_flush_ready()' has to be
-   * called when finished*/
-  void (*disp_flush)(int32_t x1, int32_t y1, int32_t x2, int32_t y2,
+    /*Write the internal buffer (VDB) to the display. 'lv_flush_ready()' has to
+     * be called when finished*/
+    void (*disp_flush)(int32_t x1, int32_t y1, int32_t x2, int32_t y2,
+                       const lv_color_t *color_p);
+
+    /*Fill an area with a color on the display*/
+    void (*disp_fill)(int32_t x1, int32_t y1, int32_t x2, int32_t y2,
+                      lv_color_t color);
+
+    /*Write pixel map (e.g. image) to the display*/
+    void (*disp_map)(int32_t x1, int32_t y1, int32_t x2, int32_t y2,
                      const lv_color_t *color_p);
 
-  /*Fill an area with a color on the display*/
-  void (*disp_fill)(int32_t x1, int32_t y1, int32_t x2, int32_t y2,
-                    lv_color_t color);
-
-  /*Write pixel map (e.g. image) to the display*/
-  void (*disp_map)(int32_t x1, int32_t y1, int32_t x2, int32_t y2,
-                   const lv_color_t *color_p);
-
 #if USE_LV_GPU
-  /*Blend two memories using opacity (GPU only)*/
-  void (*mem_blend)(lv_color_t *dest, const lv_color_t *src, uint32_t length,
-                    lv_opa_t opa);
+    /*Blend two memories using opacity (GPU only)*/
+    void (*mem_blend)(lv_color_t *dest, const lv_color_t *src, uint32_t length,
+                      lv_opa_t opa);
 
-  /*Fill a memory with a color (GPU only)*/
-  void (*mem_fill)(lv_color_t *dest, uint32_t length, lv_color_t color);
+    /*Fill a memory with a color (GPU only)*/
+    void (*mem_fill)(lv_color_t *dest, uint32_t length, lv_color_t color);
 #endif
 
 } lv_disp_drv_t;
 
 typedef struct _disp_t {
-  lv_disp_drv_t driver;
-  struct _disp_t *next;
+    lv_disp_drv_t   driver;
+    struct _disp_t *next;
 } lv_disp_t;
 
 /**********************

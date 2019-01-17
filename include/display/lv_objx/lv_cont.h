@@ -28,25 +28,25 @@ extern "C" {
 
 /*Layout options*/
 typedef enum {
-  LV_LAYOUT_OFF = 0,
-  LV_LAYOUT_CENTER,
-  LV_LAYOUT_COL_L,  /*Column left align*/
-  LV_LAYOUT_COL_M,  /*Column middle align*/
-  LV_LAYOUT_COL_R,  /*Column right align*/
-  LV_LAYOUT_ROW_T,  /*Row top align*/
-  LV_LAYOUT_ROW_M,  /*Row middle align*/
-  LV_LAYOUT_ROW_B,  /*Row bottom align*/
-  LV_LAYOUT_PRETTY, /*Put as many object as possible in row and begin a new
-                       row*/
-  LV_LAYOUT_GRID,   /*Align same-sized object into a grid*/
+    LV_LAYOUT_OFF = 0,
+    LV_LAYOUT_CENTER,
+    LV_LAYOUT_COL_L,  /*Column left align*/
+    LV_LAYOUT_COL_M,  /*Column middle align*/
+    LV_LAYOUT_COL_R,  /*Column right align*/
+    LV_LAYOUT_ROW_T,  /*Row top align*/
+    LV_LAYOUT_ROW_M,  /*Row middle align*/
+    LV_LAYOUT_ROW_B,  /*Row bottom align*/
+    LV_LAYOUT_PRETTY, /*Put as many object as possible in row and begin a new
+                         row*/
+    LV_LAYOUT_GRID,   /*Align same-sized object into a grid*/
 } lv_layout_t;
 
 typedef struct {
-  /*Inherited from 'base_obj' so no inherited ext. */ /*Ext. of ancestor*/
-  /*New data for this type */
-  uint8_t layout : 4;  /*A layout from 'lv_cont_layout_t' enum*/
-  uint8_t hor_fit : 1; /*1: Enable horizontal fit to involve all children*/
-  uint8_t ver_fit : 1; /*1: Enable horizontal fir to involve all children*/
+    /*Inherited from 'base_obj' so no inherited ext. */ /*Ext. of ancestor*/
+    /*New data for this type */
+    uint8_t layout : 4;  /*A layout from 'lv_cont_layout_t' enum*/
+    uint8_t hor_fit : 1; /*1: Enable horizontal fit to involve all children*/
+    uint8_t ver_fit : 1; /*1: Enable horizontal fir to involve all children*/
 } lv_cont_ext_t;
 
 /**********************
@@ -89,7 +89,7 @@ void lv_cont_set_fit(lv_obj_t *cont, bool hor_en, bool ver_en);
  * @param style pointer to the new style
  */
 static inline void lv_cont_set_style(lv_obj_t *cont, lv_style_t *style) {
-  lv_obj_set_style(cont, style);
+    lv_obj_set_style(cont, style);
 }
 
 /*=====================
@@ -123,7 +123,7 @@ bool lv_cont_get_ver_fit(lv_obj_t *cont);
  * @return pointer to the container's style
  */
 static inline lv_style_t *lv_cont_get_style(lv_obj_t *cont) {
-  return lv_obj_get_style(cont);
+    return lv_obj_get_style(cont);
 }
 
 /**********************

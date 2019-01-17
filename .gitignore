@@ -58,5 +58,6 @@ dkms.conf
 
 # End of https://www.gitignore.io/api/c
 
-/firmware
+!/firmware/libpros.a
+!/firmware/v5.ld
 /bin

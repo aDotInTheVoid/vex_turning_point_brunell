@@ -34,44 +34,43 @@ extern "C" {
 
 /*Button states*/
 typedef enum {
-  LV_BTN_STATE_REL,
-  LV_BTN_STATE_PR,
-  LV_BTN_STATE_TGL_REL,
-  LV_BTN_STATE_TGL_PR,
-  LV_BTN_STATE_INA,
-  LV_BTN_STATE_NUM,
+    LV_BTN_STATE_REL,
+    LV_BTN_STATE_PR,
+    LV_BTN_STATE_TGL_REL,
+    LV_BTN_STATE_TGL_PR,
+    LV_BTN_STATE_INA,
+    LV_BTN_STATE_NUM,
 } lv_btn_state_t;
 
 typedef enum {
-  LV_BTN_ACTION_CLICK,
-  LV_BTN_ACTION_PR,
-  LV_BTN_ACTION_LONG_PR,
-  LV_BTN_ACTION_LONG_PR_REPEAT,
-  LV_BTN_ACTION_NUM,
+    LV_BTN_ACTION_CLICK,
+    LV_BTN_ACTION_PR,
+    LV_BTN_ACTION_LONG_PR,
+    LV_BTN_ACTION_LONG_PR_REPEAT,
+    LV_BTN_ACTION_NUM,
 } lv_btn_action_t;
 
 /*Data of button*/
 typedef struct {
-  lv_cont_ext_t cont; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_action_t actions[LV_BTN_ACTION_NUM];
-  lv_style_t *styles[LV_BTN_STATE_NUM]; /*Styles in each state*/
+    lv_cont_ext_t cont; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_action_t actions[LV_BTN_ACTION_NUM];
+    lv_style_t *styles[LV_BTN_STATE_NUM]; /*Styles in each state*/
 
-  lv_btn_state_t
-      state;          /*Current state of the button from 'lv_btn_state_t' enum*/
-  uint8_t toggle : 1; /*1: Toggle enabled*/
-  uint8_t
-      long_pr_action_executed : 1; /*1: Long press action executed (Handled by
-                                      the library)*/
+    lv_btn_state_t
+            state; /*Current state of the button from 'lv_btn_state_t' enum*/
+    uint8_t toggle : 1;                  /*1: Toggle enabled*/
+    uint8_t long_pr_action_executed : 1; /*1: Long press action executed
+                                            (Handled by the library)*/
 } lv_btn_ext_t;
 
 /*Styles*/
 typedef enum {
-  LV_BTN_STYLE_REL,
-  LV_BTN_STYLE_PR,
-  LV_BTN_STYLE_TGL_REL,
-  LV_BTN_STYLE_TGL_PR,
-  LV_BTN_STYLE_INA,
+    LV_BTN_STYLE_REL,
+    LV_BTN_STYLE_PR,
+    LV_BTN_STYLE_TGL_REL,
+    LV_BTN_STYLE_TGL_PR,
+    LV_BTN_STYLE_INA,
 } lv_btn_style_t;
 
 /**********************
@@ -126,7 +125,7 @@ void lv_btn_set_action(lv_obj_t *btn, lv_btn_action_t type, lv_action_t action);
  * @param layout a layout from 'lv_cont_layout_t'
  */
 static inline void lv_btn_set_layout(lv_obj_t *btn, lv_layout_t layout) {
-  lv_cont_set_layout(btn, layout);
+    lv_cont_set_layout(btn, layout);
 }
 
 /**
@@ -138,7 +137,7 @@ static inline void lv_btn_set_layout(lv_obj_t *btn, lv_layout_t layout) {
  * @param ver_en true: enable the vertical fit
  */
 static inline void lv_btn_set_fit(lv_obj_t *btn, bool hor_en, bool ver_en) {
-  lv_cont_set_fit(btn, hor_en, ver_en);
+    lv_cont_set_fit(btn, hor_en, ver_en);
 }
 
 /**
@@ -180,7 +179,7 @@ lv_action_t lv_btn_get_action(lv_obj_t *btn, lv_btn_action_t type);
  * @return the layout from 'lv_cont_layout_t'
  */
 static inline lv_layout_t lv_btn_get_layout(lv_obj_t *btn) {
-  return lv_cont_get_layout(btn);
+    return lv_cont_get_layout(btn);
 }
 
 /**
@@ -189,7 +188,7 @@ static inline lv_layout_t lv_btn_get_layout(lv_obj_t *btn) {
  * @return true: horizontal fit is enabled; false: disabled
  */
 static inline bool lv_btn_get_hor_fit(lv_obj_t *btn) {
-  return lv_cont_get_hor_fit(btn);
+    return lv_cont_get_hor_fit(btn);
 }
 
 /**
@@ -198,7 +197,7 @@ static inline bool lv_btn_get_hor_fit(lv_obj_t *btn) {
  * @return true: vertical fit is enabled; false: disabled
  */
 static inline bool lv_btn_get_ver_fit(lv_obj_t *btn) {
-  return lv_cont_get_ver_fit(btn);
+    return lv_cont_get_ver_fit(btn);
 }
 
 /**

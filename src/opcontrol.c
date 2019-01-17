@@ -1,5 +1,5 @@
+#include "config.h"
 #include "main.h"
-
 /**
  * Runs the operator control code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -14,5 +14,12 @@
  * task, not resume it from where it left off.
  */
 void opcontrol() {
+    while (true) {
+        // Drivetrain
+        int turn    = controller_get_analog(MAIN_CONTROLLER, TRN_CHANNEL);
+        int forward = controller_get_analog(MAIN_CONTROLLER, FWD_CHANNEL);
 
+        motor_move(back_left__drive, forward + turn);
+        motor_move(back_right_drive, -forward + turn);
+    }
 }

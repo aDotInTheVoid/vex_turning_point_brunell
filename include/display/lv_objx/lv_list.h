@@ -45,23 +45,23 @@ extern "C" {
  **********************/
 /*Data of list*/
 typedef struct {
-  lv_page_ext_t page; /*Ext. of ancestor*/
-  /*New data for this type */
-  uint16_t anim_time; /*Scroll animation time*/
-  lv_style_t
-      *styles_btn[LV_BTN_STATE_NUM]; /*Styles of the list element buttons*/
-  lv_style_t *style_img; /*Style of the list element images on buttons*/
+    lv_page_ext_t page; /*Ext. of ancestor*/
+    /*New data for this type */
+    uint16_t anim_time; /*Scroll animation time*/
+    lv_style_t
+        *styles_btn[LV_BTN_STATE_NUM]; /*Styles of the list element buttons*/
+    lv_style_t *style_img; /*Style of the list element images on buttons*/
 } lv_list_ext_t;
 
 typedef enum {
-  LV_LIST_STYLE_BG,
-  LV_LIST_STYLE_SCRL,
-  LV_LIST_STYLE_SB,
-  LV_LIST_STYLE_BTN_REL,
-  LV_LIST_STYLE_BTN_PR,
-  LV_LIST_STYLE_BTN_TGL_REL,
-  LV_LIST_STYLE_BTN_TGL_PR,
-  LV_LIST_STYLE_BTN_INA,
+    LV_LIST_STYLE_BG,
+    LV_LIST_STYLE_SCRL,
+    LV_LIST_STYLE_SB,
+    LV_LIST_STYLE_BTN_REL,
+    LV_LIST_STYLE_BTN_PR,
+    LV_LIST_STYLE_BTN_TGL_REL,
+    LV_LIST_STYLE_BTN_TGL_PR,
+    LV_LIST_STYLE_BTN_INA,
 } lv_list_style_t;
 
 /**********************
@@ -109,7 +109,7 @@ void lv_list_set_anim_time(lv_obj_t *list, uint16_t anim_time);
  * @param sb_mode the new mode from 'lv_page_sb_mode_t' enum
  */
 static inline void lv_list_set_sb_mode(lv_obj_t *list, lv_sb_mode_t mode) {
-  lv_page_set_sb_mode(list, mode);
+    lv_page_set_sb_mode(list, mode);
 }
 
 /**
@@ -157,7 +157,7 @@ uint16_t lv_list_get_anim_time(lv_obj_t *list);
  * @return scrollbar mode from 'lv_page_sb_mode_t' enum
  */
 static inline lv_sb_mode_t lv_list_get_sb_mode(lv_obj_t *list) {
-  return lv_page_get_sb_mode(list);
+    return lv_page_get_sb_mode(list);
 }
 
 /**

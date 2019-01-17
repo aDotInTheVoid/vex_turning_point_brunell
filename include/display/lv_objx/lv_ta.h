@@ -39,40 +39,40 @@ extern "C" {
  **********************/
 
 typedef enum {
-  LV_CURSOR_NONE,
-  LV_CURSOR_LINE,
-  LV_CURSOR_BLOCK,
-  LV_CURSOR_OUTLINE,
-  LV_CURSOR_UNDERLINE,
-  LV_CURSOR_HIDDEN = 0x10, /*Or it to any value to hide the cursor temporally*/
+    LV_CURSOR_NONE,
+    LV_CURSOR_LINE,
+    LV_CURSOR_BLOCK,
+    LV_CURSOR_OUTLINE,
+    LV_CURSOR_UNDERLINE,
+    LV_CURSOR_HIDDEN =
+        0x10, /*Or it to any value to hide the cursor temporally*/
 } lv_cursor_type_t;
 
 /*Data of text area*/
 typedef struct {
-  lv_page_ext_t page; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_obj_t *label;      /*Label of the text area*/
-  char *pwd_tmp;        /*Used to store the original text in password mode*/
-  uint8_t pwd_mode : 1; /*Replace characters with '*' */
-  uint8_t one_line : 1; /*One line mode (ignore line breaks)*/
-  struct {
-    lv_style_t *style; /*Style of the cursor (NULL to use label's style)*/
-    lv_coord_t
-        valid_x; /*Used when stepping up/down in text area when stepping to a
-                    shorter line. (Handled by the library)*/
-    uint16_t
-        pos; /*The current cursor position (0: before 1. letter; 1: before 2.
-                letter etc.)*/
-    lv_cursor_type_t type; /*Shape of the cursor*/
-    uint8_t state : 1;     /*Indicates that the cursor is visible now or not
-                              (Handled by the library)*/
-  } cursor;
+    lv_page_ext_t page; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_obj_t *label;        /*Label of the text area*/
+    char *    pwd_tmp;      /*Used to store the original text in password mode*/
+    uint8_t   pwd_mode : 1; /*Replace characters with '*' */
+    uint8_t   one_line : 1; /*One line mode (ignore line breaks)*/
+    struct {
+        lv_style_t *style; /*Style of the cursor (NULL to use label's style)*/
+        lv_coord_t
+            valid_x;  /*Used when stepping up/down in text area when stepping to
+                         a  shorter line. (Handled by the library)*/
+        uint16_t pos; /*The current cursor position (0: before 1. letter; 1:
+                         before 2. letter etc.)*/
+        lv_cursor_type_t type; /*Shape of the cursor*/
+        uint8_t state : 1;     /*Indicates that the cursor is visible now or not
+                                  (Handled by the library)*/
+    } cursor;
 } lv_ta_ext_t;
 
 typedef enum {
-  LV_TA_STYLE_BG,
-  LV_TA_STYLE_SB,
-  LV_TA_STYLE_CURSOR,
+    LV_TA_STYLE_BG,
+    LV_TA_STYLE_SB,
+    LV_TA_STYLE_CURSOR,
 } lv_ta_style_t;
 
 /**********************
@@ -158,7 +158,7 @@ void lv_ta_set_one_line(lv_obj_t *ta, bool en);
  * @param sb_mode the new mode from 'lv_page_sb_mode_t' enum
  */
 static inline void lv_ta_set_sb_mode(lv_obj_t *ta, lv_sb_mode_t mode) {
-  lv_page_set_sb_mode(ta, mode);
+    lv_page_set_sb_mode(ta, mode);
 }
 
 /**
@@ -228,7 +228,7 @@ bool lv_ta_get_one_line(lv_obj_t *ta);
  * @return scrollbar mode from 'lv_page_sb_mode_t' enum
  */
 static inline lv_sb_mode_t lv_ta_get_sb_mode(lv_obj_t *ta) {
-  return lv_page_get_sb_mode(ta);
+    return lv_page_get_sb_mode(ta);
 }
 
 /**

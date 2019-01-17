@@ -31,7 +31,7 @@ extern "C" {
 #define LV_GROUP_KEY_PREV 11  /*0x0B, '*/
 
 #define LV_GROUP_KEY_ENTER_LONG                                                \
-  14 /*0x0E, Sent by the library if ENTER is long pressed*/
+    14 /*0x0E, Sent by the library if ENTER is long pressed*/
 
 #if USE_LV_GROUP != 0
 /**********************
@@ -43,14 +43,14 @@ typedef void (*lv_group_style_mod_func_t)(lv_style_t *);
 typedef void (*lv_group_focus_cb_t)(struct _lv_group_t *);
 
 typedef struct _lv_group_t {
-  lv_ll_t obj_ll;       /*Linked list to store the objects in the group */
-  lv_obj_t **obj_focus; /*The object in focus*/
-  lv_group_style_mod_func_t
-      style_mod; /*A function which modifies the style of the focused object*/
-  lv_group_focus_cb_t
-      focus_cb; /*A function to call when a new object is focused (optional)*/
-  lv_style_t style_tmp; /*Stores the modified style of the focused object */
-  uint8_t frozen : 1;   /*1: can't focus to new object*/
+    lv_ll_t    obj_ll;    /*Linked list to store the objects in the group */
+    lv_obj_t **obj_focus; /*The object in focus*/
+    lv_group_style_mod_func_t
+        style_mod; /*A function which modifies the style of the focused object*/
+    lv_group_focus_cb_t
+               focus_cb; /*A function to call when a new object is focused (optional)*/
+    lv_style_t style_tmp;  /*Stores the modified style of the focused object */
+    uint8_t    frozen : 1; /*1: can't focus to new object*/
 } lv_group_t;
 
 /**********************
@@ -114,7 +114,7 @@ void lv_group_send_data(lv_group_t *group, uint32_t c);
  * @param group pointer to a group
  * @param style_mod_func the style modifier function pointer
  */
-void lv_group_set_style_mod_cb(lv_group_t *group,
+void lv_group_set_style_mod_cb(lv_group_t *              group,
                                lv_group_style_mod_func_t style_mod_func);
 
 /**

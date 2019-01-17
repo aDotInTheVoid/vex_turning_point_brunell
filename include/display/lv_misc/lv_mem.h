@@ -25,13 +25,13 @@ extern "C" {
  **********************/
 
 typedef struct {
-  uint32_t total_size;
-  uint32_t free_cnt;
-  uint32_t free_size;
-  uint32_t free_biggest_size;
-  uint32_t used_cnt;
-  uint8_t used_pct;
-  uint8_t frag_pct;
+    uint32_t total_size;
+    uint32_t free_cnt;
+    uint32_t free_size;
+    uint32_t free_biggest_size;
+    uint32_t used_cnt;
+    uint8_t  used_pct;
+    uint8_t  frag_pct;
 } lv_mem_monitor_t;
 
 /**********************
@@ -89,10 +89,10 @@ uint32_t lv_mem_get_size(const void *data);
  * p pointer to a memory
  */
 static inline void lv_mem_assert(void *p) {
-  if (p == NULL) {
-    while (1)
-      ;
-  }
+    if (p == NULL) {
+        while (1)
+            ;
+    }
 }
 
 /**********************

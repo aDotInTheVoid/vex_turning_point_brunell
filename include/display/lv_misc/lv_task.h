@@ -17,6 +17,7 @@ extern "C" {
  *********************/
 #include "lv_ll.h"
 #include "lv_mem.h"
+
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -33,25 +34,25 @@ extern "C" {
  * Possible priorities for lv_tasks
  */
 typedef enum {
-  LV_TASK_PRIO_OFF = 0,
-  LV_TASK_PRIO_LOWEST,
-  LV_TASK_PRIO_LOW,
-  LV_TASK_PRIO_MID,
-  LV_TASK_PRIO_HIGH,
-  LV_TASK_PRIO_HIGHEST,
-  LV_TASK_PRIO_NUM,
+    LV_TASK_PRIO_OFF = 0,
+    LV_TASK_PRIO_LOWEST,
+    LV_TASK_PRIO_LOW,
+    LV_TASK_PRIO_MID,
+    LV_TASK_PRIO_HIGH,
+    LV_TASK_PRIO_HIGHEST,
+    LV_TASK_PRIO_NUM,
 } lv_task_prio_t;
 
 /**
  * Descriptor of a lv_task
  */
 typedef struct {
-  uint32_t period;
-  uint32_t last_run;
-  void (*task)(void *);
-  void *param;
-  uint8_t prio : 3;
-  uint8_t once : 1;
+    uint32_t period;
+    uint32_t last_run;
+    void (*task)(void *);
+    void *  param;
+    uint8_t prio : 3;
+    uint8_t once : 1;
 } lv_task_t;
 
 /**********************

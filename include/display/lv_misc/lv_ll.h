@@ -15,6 +15,7 @@ extern "C" {
  *      INCLUDES
  *********************/
 #include "lv_mem.h"
+
 #include <stddef.h>
 #include <stdint.h>
 
@@ -31,9 +32,9 @@ typedef uint8_t lv_ll_node_t;
 
 /*Description of a linked list*/
 typedef struct {
-  uint32_t n_size;
-  lv_ll_node_t *head;
-  lv_ll_node_t *tail;
+    uint32_t      n_size;
+    lv_ll_node_t *head;
+    lv_ll_node_t *tail;
 } lv_ll_t;
 
 /**********************
@@ -127,10 +128,10 @@ void *lv_ll_get_prev(lv_ll_t *ll_p, void *n_act);
  **********************/
 
 #define LL_READ(list, i)                                                       \
-  for (i = lv_ll_get_head(&list); i != NULL; i = lv_ll_get_next(&list, i))
+    for (i = lv_ll_get_head(&list); i != NULL; i = lv_ll_get_next(&list, i))
 
 #define LL_READ_BACK(list, i)                                                  \
-  for (i = lv_ll_get_tail(&list); i != NULL; i = lv_ll_get_prev(&list, i))
+    for (i = lv_ll_get_tail(&list); i != NULL; i = lv_ll_get_prev(&list, i))
 
 #ifdef __cplusplus
 } /* extern "C" */

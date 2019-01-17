@@ -33,20 +33,20 @@ extern "C" {
  **********************/
 /*Data of slider*/
 typedef struct {
-  lv_bar_ext_t bar; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_action_t action;     /*Function to call when a new value is set*/
-  lv_style_t *style_knob; /*Style of the knob*/
-  int16_t drag_value;     /*Store a temporal value during press until release
-                             (Handled by the library)*/
-  uint8_t knob_in : 1;    /*1: Draw the knob inside the bar*/
+    lv_bar_ext_t bar; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_action_t action;     /*Function to call when a new value is set*/
+    lv_style_t *style_knob; /*Style of the knob*/
+    int16_t     drag_value; /*Store a temporal value during press until release
+                               (Handled by the library)*/
+    uint8_t knob_in : 1;    /*1: Draw the knob inside the bar*/
 } lv_slider_ext_t;
 
 /*Built-in styles of slider*/
 typedef enum {
-  LV_SLIDER_STYLE_BG,
-  LV_SLIDER_STYLE_INDIC,
-  LV_SLIDER_STYLE_KNOB,
+    LV_SLIDER_STYLE_BG,
+    LV_SLIDER_STYLE_INDIC,
+    LV_SLIDER_STYLE_KNOB,
 } lv_slider_style_t;
 
 /**********************
@@ -72,7 +72,7 @@ lv_obj_t *lv_slider_create(lv_obj_t *par, lv_obj_t *copy);
  * @param value new value
  */
 static inline void lv_slider_set_value(lv_obj_t *slider, int16_t value) {
-  lv_bar_set_value(slider, value);
+    lv_bar_set_value(slider, value);
 }
 
 /**
@@ -83,7 +83,7 @@ static inline void lv_slider_set_value(lv_obj_t *slider, int16_t value) {
  */
 static inline void lv_slider_set_value_anim(lv_obj_t *slider, int16_t value,
                                             uint16_t anim_time) {
-  lv_bar_set_value_anim(slider, value, anim_time);
+    lv_bar_set_value_anim(slider, value, anim_time);
 }
 
 /**
@@ -94,7 +94,7 @@ static inline void lv_slider_set_value_anim(lv_obj_t *slider, int16_t value,
  */
 static inline void lv_slider_set_range(lv_obj_t *slider, int16_t min,
                                        int16_t max) {
-  lv_bar_set_range(slider, min, max);
+    lv_bar_set_range(slider, min, max);
 }
 
 /**
@@ -138,7 +138,7 @@ int16_t lv_slider_get_value(lv_obj_t *slider);
  * @return the minimum value of the slider
  */
 static inline int16_t lv_slider_get_min_value(lv_obj_t *slider) {
-  return lv_bar_get_min_value(slider);
+    return lv_bar_get_min_value(slider);
 }
 
 /**
@@ -147,7 +147,7 @@ static inline int16_t lv_slider_get_min_value(lv_obj_t *slider) {
  * @return the maximum value of the slider
  */
 static inline int16_t lv_slider_get_max_value(lv_obj_t *slider) {
-  return lv_bar_get_max_value(slider);
+    return lv_bar_get_max_value(slider);
 }
 
 /**

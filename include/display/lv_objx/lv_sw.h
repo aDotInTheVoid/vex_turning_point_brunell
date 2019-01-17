@@ -33,19 +33,19 @@ extern "C" {
  **********************/
 /*Data of switch*/
 typedef struct {
-  lv_slider_ext_t slider; /*Ext. of ancestor*/
-  /*New data for this type */
-  lv_style_t *style_knob_off; /*Style of the knob when the switch is OFF*/
-  lv_style_t *style_knob_on;  /*Style of the knob when the switch is ON (NULL to
-                                 use the same as OFF)*/
-  uint8_t changed : 1; /*Indicates the switch explicitly changed by drag*/
+    lv_slider_ext_t slider; /*Ext. of ancestor*/
+    /*New data for this type */
+    lv_style_t *style_knob_off; /*Style of the knob when the switch is OFF*/
+    lv_style_t *style_knob_on;  /*Style of the knob when the switch is ON (NULL
+                                   to  use the same as OFF)*/
+    uint8_t changed : 1; /*Indicates the switch explicitly changed by drag*/
 } lv_sw_ext_t;
 
 typedef enum {
-  LV_SW_STYLE_BG,
-  LV_SW_STYLE_INDIC,
-  LV_SW_STYLE_KNOB_OFF,
-  LV_SW_STYLE_KNOB_ON,
+    LV_SW_STYLE_BG,
+    LV_SW_STYLE_INDIC,
+    LV_SW_STYLE_KNOB_OFF,
+    LV_SW_STYLE_KNOB_ON,
 } lv_sw_style_t;
 
 /**********************
@@ -83,7 +83,7 @@ void lv_sw_off(lv_obj_t *sw);
  * @param action a callback function
  */
 static inline void lv_sw_set_action(lv_obj_t *sw, lv_action_t action) {
-  lv_slider_set_action(sw, action);
+    lv_slider_set_action(sw, action);
 }
 
 /**
@@ -104,7 +104,7 @@ void lv_sw_set_style(lv_obj_t *sw, lv_sw_style_t type, lv_style_t *style);
  * @return false: OFF; true: ON
  */
 static inline bool lv_sw_get_state(lv_obj_t *sw) {
-  return lv_bar_get_value(sw) == 0 ? false : true;
+    return lv_bar_get_value(sw) == 0 ? false : true;
 }
 
 /**
@@ -113,7 +113,7 @@ static inline bool lv_sw_get_state(lv_obj_t *sw) {
  * @return the callback function
  */
 static inline lv_action_t lv_sw_get_action(lv_obj_t *slider) {
-  return lv_slider_get_action(slider);
+    return lv_slider_get_action(slider);
 }
 
 /**
