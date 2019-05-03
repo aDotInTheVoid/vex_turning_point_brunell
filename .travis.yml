@@ -1,14 +1,19 @@
 language: c
-sudo: false
+sudo: true 
 dist: xenial
-script: make
-addons:
-  apt:
-    packages:
-        - gcc-arm-none-eabi
-        - linux-libc-dev
-        - glibc-source
-        - libc6
-        - libc6-dev
-        - gcc
-        - build-essential
+
+
+#addons:
+#  apt:
+#    packages:
+#    - gcc-arm-none-eabi 
+
+install:
+    - sudo add-apt-repository -y ppa:team-gcc-arm-embedded/ppa
+    - sudo apt-get -y update
+    - sudo apt-get -y install gcc-arm-embedded
+
+script: 
+ #- cat yes yes | pros conduct download latest
+ # - pros conduct new .
+- make
